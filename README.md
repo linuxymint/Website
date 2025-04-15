@@ -6,4 +6,5 @@
 
 اللغات: HTML, Tailwind CSS, Google Fonts.
 
-**الترخيص:(https://opensource.org/licenses/MIT)
+
+الترخيص:https://opensource.org/licenses/MIT
