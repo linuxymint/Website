@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل [اسم التطبيق] - تطبيقك المثالي لـ...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Arabic font */
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        /* Simple wave divider */
+        .wave-divider {
+            position: relative;
+            background: #1f2937; /* bg-gray-800 - Slightly lighter dark */
+            color: white;
+        }
+        .wave-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Adjust height */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31.74,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' class='shape-fill' fill='%23EC4899' fill-opacity='1'%3E%3C/path%3E%3C/svg%3E"); /* bg-pink-600 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 10;
+            transform: translateY(1px); /* Prevent thin gap */
+        }
+        .content-above-wave {
+            position: relative;
+            z-index: 20;
+        }
+        /* Style for App Store/Google Play buttons */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #374151; /* bg-gray-700 */
+            color: white;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            min-width: 180px; /* Ensure buttons have similar width */
+            justify-content: center;
+        }
+        .store-button:hover {
+            background-color: #4b5563; /* bg-gray-600 */
+        }
+        .store-button svg {
+            width: 1.5rem; /* w-6 */
+            height: 1.5rem; /* h-6 */
+            margin-left: 0.75rem; /* ml-3 */
+        }
+        .store-button .button-text {
+            text-align: right;
+        }
+        .store-button .button-text span:first-child {
+            font-size: 0.75rem; /* text-xs */
+            display: block;
+            line-height: 1;
+        }
+        .store-button .button-text span:last-child {
+            font-size: 1rem; /* text-base */
+            font-weight: 600; /* font-semibold */
+            display: block;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <nav class="bg-gray-900 p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">[اسم التطبيق]</a>
+            <a href="#download" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-5 rounded-full transition duration-300">
+                تحميل الآن
+            </a>
+        </div>
+    </nav>
+
+    <header class="wave-divider py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center content-above-wave">
+            <div class="mb-6">
+                <span class="inline-block bg-pink-600 text-white text-4xl font-bold p-5 rounded-full">
+                    شعار
+                </span>
+                </div>
+
+<h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">حمل [اسم التطبيق] اليوم!</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">[وصف جذاب ومختصر للتطبيق يوضح فائدته الرئيسية للمستخدم]</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#" class="store-button">
+                    <div class="button-text">
+                        <span>متوفر على</span>
+                        <span>Google Play</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M7.05 3.007a.75.75 0 01.488-.006l10.003 5.001a.75.75 0 010 1.33l-10.003 5.002a.75.75 0 01-1.138-.665V3.672a.75.75 0 01.65-.665zM18.4 12L8.4 7.001v9.998L18.4 12zM4.75 2.75a.75.75 0 00-.75.75v17a.75.75 0 00.75.75H6a.75.75 0 00.75-.75V3.5a.75.75 0 00-.75-.75H4.75z"/></svg>
+                </a>
+                <a href="#" class="store-button">
+                     <div class="button-text">
+                        <span>Download on the</span>
+                        <span>App Store</span>
+                    </div>
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12.14.98c-.33 0-.66.03-.99.09-1.92.36-3.6 1.53-4.83 3.15C5.13 5.7 4.8 7.43 4.8 9.15c0 .21.01.42.03.63-.87 0-1.71.18-2.49.51-.76.33-1.41.8-1.9 1.38-.49.61-.78 1.35-.78 2.16 0 .81.3 1.53.81 2.13.51.61 1.17 1.05 1.92 1.35.75.3 1.59.45 2.46.45.15 0 .3-.01.45-.03 1.17 2.04 2.97 3.48 5.19 4.11.63.18 1.29.27 1.95.27.66 0 1.32-.09 1.95-.27 2.22-.63 4.02-2.07 5.19-4.11.15.02.3.03.45.03.87 0 1.71-.15 2.46-.45.75-.3 1.41-.74 1.92-1.35.51-.6.81-1.32.81-2.13 0-.81-.29-1.55-.78-2.16-.49-.58-1.14-1.05-1.9-1.38-.78-.33-1.62-.51-2.49-.51.02-.21.03-.42.03-.63 0-1.72-.33-3.45-1.53-4.92-1.2-1.62-2.88-2.79-4.83-3.15-.32-.06-.65-.09-.98-.09zm0 1.44c.27 0 .54.03.81.09 1.59.3 2.91 1.23 3.84 2.49.96 1.29 1.35 2.73 1.35 4.2 0 .18-.01.36-.03.54-.03.31-.06.6-.09.87H8.25c-.03-.27-.06-.56-.09-.87-.02-.18-.03-.36-.03-.54 0-1.47.39-2.91 1.35-4.2C10.41 3.68 11.73 2.75 13.32 2.45c.27-.06.54-.09.81-.09zm-5.91 10.59c-.12 0-.24.01-.36.03-.6.12-1.11.39-1.5.75-.39.39-.6.87-.6 1.41 0 .54.21 1.02.6 1.41.39.36.9.63 1.5.75.12.02.24.03.36.03.33 0 .66-.06.96-.18 1.14-1.26 1.71-2.88 1.71-4.68 0-.39-.03-.78-.09-1.17-.27-.12-.54-.18-.81-.18-.42 0-.81.09-1.17.24zm11.82 0c-.27 0-.54.06-.81.18-.06.39-.09.78-.09 1.17 0 1.8 1.14 3.42 2.28 4.68.3.12.63.18.96.18.12 0 .24-.01.36-.03.6-.12 1.11-.39 1.5-.75.39-.39.6-.87.6-1.41 0-.54-.21-1.02-.6-1.41-.39-.36-.9-.63-1.5-.75-.12-.02-.24-.03-.36-.03-.36-.06-.72-.15-1.05-.24z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="py-16 md:py-24 bg-gray-100 text-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">مميزات رائعة تنتظرك</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
+                <div class="p-6">
+                    <div class="bg-pink-100 text-pink-600 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ميزة 1: السرعة</h3>
+                    <p class="text-gray-600">وصف قصير للميزة الأولى وكيف تفيد المستخدم.</p>
+                </div>
+                <div class="p-6">
+                     <div class="bg-pink-100 text-pink-600 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ميزة 2: سهولة الاستخدام</h3>
+                    <p class="text-gray-600">وصف قصير للميزة الثانية وكيف تفيد المستخدم.</p>
+                </div>
+                <div class="p-6">
+                     <div class="bg-pink-100 text-pink-600 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ميزة 3: تصميم جذاب</h3>
+                    <p class="text-gray-600">وصف قصير للميزة الثالثة وكيف تفيد المستخدم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="detailed-features" class="py-16 md:py-24 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">اكتشف المزيد من إمكانيات [اسم التطبيق]</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">[اسم الميزة التفصيلية 1]</h3>
+                    <p class="text-gray-300 mb-6">[وصف تفصيلي للميزة الأولى يشرح فوائدها بشكل أعمق. يمكنك إضافة نقاط فرعية أو قائمة هنا.]</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>نقطة فرعية تشرح جانبًا معينًا.</li>
+                        <li>ميزة أخرى مرتبطة بهذه الميزة.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">[اسم الميزة التفصيلية 2]</h3>
+                    <p class="text-gray-300 mb-6">[وصف تفصيلي للميزة الثانية يشرح فوائدها بشكل أعمق. يمكنك إضافة نقاط فرعية أو قائمة هنا.]</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>نقطة فرعية تشرح جانبًا معينًا.</li>
+                        <li>ميزة أخرى مرتبطة بهذه الميزة.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">[اسم الميزة التفصيلية 3]</h3>
+                    <p class="text-gray-300 mb-6">[وصف تفصيلي للميزة الثالثة يشرح فوائدها بشكل أعمق. يمكنك إضافة نقاط فرعية أو قائمة هنا.]</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>نقطة فرعية تشرح جانبًا معينًا.</li>
+                        <li>ميزة أخرى مرتبطة بهذه الميزة.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">[اسم الميزة التفصيلية 4]</h3>
+                    <p class="text-gray-300 mb-6">[وصف تفصيلي للميزة الرابعة يشرح فوائدها بشكل أعمق. يمكنك إضافة نقاط فرعية أو قائمة هنا.]</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>نقطة فرعية تشرح جانبًا معينًا.</li>
+                        <li>ميزة أخرى مرتبطة بهذه الميزة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">شاهد التطبيق أثناء العمل</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <img src="https://placehold.co/300x600/ec4899/ffffff?text=لقطة+شاشة+1" alt="لقطة شاشة من التطبيق 1" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300">
+                <img src="https://placehold.co/300x600/1f2937/ffffff?text=لقطة+شاشة+2" alt="لقطة شاشة من التطبيق 2" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300 hidden sm:block">
+                <img src="https://placehold.co/300x600/ec4899/ffffff?text=لقطة+شاشة+3" alt="لقطة شاشة من التطبيق 3" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300 hidden md:block">
+                <img src="https://placehold.co/300x600/1f2937/ffffff?text=لقطة+شاشة+4" alt="لقطة شاشة من التطبيق 4" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300 hidden sm:block">
+                <img src="https://placehold.co/300x600/ec4899/ffffff?text=لقطة+شاشة+5" alt="لقطة شاشة من التطبيق 5" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300">
+                <img src="https://placehold.co/300x600/1f2937/ffffff?text=لقطة+شاشة+6" alt="لقطة شاشة من التطبيق 6" class="rounded-lg shadow-lg mx-auto border-4 border-gray-300 hidden md:block">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 md:py-24 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">ماذا يقول المستخدمون؟</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <p class="text-lg italic mb-4">"[اقتباس من مستخدم سعيد يصف تجربته الإيجابية مع التطبيق]."</p>
+                    <p class="text-gray-400 font-semibold">- [اسم المستخدم أو مصدر الشهادة]</p>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <p class="text-lg italic mb-4">"[اقتباس آخر من مستخدم سعيد يبرز ميزة محددة أو فائدة حصل عليها]."</p>
+                    <p class="text-gray-400 font-semibold">- [اسم المستخدم أو مصدر الشهادة]</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 md:py-24 bg-gray-100 text-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">أسئلة شائعة</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2">[السؤال الأول؟]</h3>
+                    <p class="text-gray-600">[الإجابة على السؤال الأول.]</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2">[السؤال الثاني؟]</h3>
+                    <p class="text-gray-600">[الإجابة على السؤال الثاني.]</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2">[السؤال الثالث؟]</h3>
+                    <p class="text-gray-600">[الإجابة على السؤال الثالث.]</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+     <section id="download" class="py-16 md:py-24 bg-pink-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">جاهز لتجربة [اسم التطبيق]؟</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">انضم إلى آلاف المستخدمين السعداء وحمّل التطبيق الآن!</p>
+             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                 <a href="#" class="store-button bg-white text-gray-900 hover:bg-gray-200">
+                    <div class="button-text">
+                        <span>متوفر على</span>
+                        <span>Google Play</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M7.05 3.007a.75.75 0 01.488-.006l10.003 5.001a.75.75 0 010 1.33l-10.003 5.002a.75.75 0 01-1.138-.665V3.672a.75.75 0 01.65-.665zM18.4 12L8.4 7.001v9.998L18.4 12zM4.75 2.75a.75.75 0 00-.75.75v17a.75.75 0 00.75.75H6a.75.75 0 00.75-.75V3.5a.75.75 0 00-.75-.75H4.75z"/></svg>
+                </a>
+                <a href="#" class="store-button bg-white text-gray-900 hover:bg-gray-200">
+                     <div class="button-text">
+                        <span>Download on the</span>
+                        <span>App Store</span>
+                    </div>
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12.14.98c-.33 0-.66.03-.99.09-1.92.36-3.6 1.53-4.83 3.15C5.13 5.7 4.8 7.43 4.8 9.15c0 .21.01.42.03.63-.87 0-1.71.18-2.49.51-.76.33-1.41.8-1.9 1.38-.49.61-.78 1.35-.78 2.16 0 .81.3 1.53.81 2.13.51.61 1.17 1.05 1.92 1.35.75.3 1.59.45 2.46.45.15 0 .3-.01.45-.03 1.17 2.04 2.97 3.48 5.19 4.11.63.18 1.29.27 1.95.27.66 0 1.32-.09 1.95-.27 2.22-.63 4.02-2.07 5.19-4.11.15.02.3.03.45.03.87 0 1.71-.15 2.46-.45.75-.3 1.41-.74 1.92-1.35.51-.6.81-1.32.81-2.13 0-.81-.29-1.55-.78-2.16-.49-.58-1.14-1.05-1.9-1.38-.78-.33-1.62-.51-2.49-.51.02-.21.03-.42.03-.63 0-1.72-.33-3.45-1.53-4.92-1.2-1.62-2.88-2.79-4.83-3.15-.32-.06-.65-.09-.98-.09zm0 1.44c.27 0 .54.03.81.09 1.59.3 2.91 1.23 3.84 2.49.96 1.29 1.35 2.73 1.35 4.2 0 .18-.01.36-.03.54-.03.31-.06.6-.09.87H8.25c-.03-.27-.06-.56-.09-.87-.02-.18-.03-.36-.03-.54 0-1.47.39-2.91 1.35-4.2C10.41 3.68 11.73 2.75 13.32 2.45c.27-.06.54-.09.81-.09zm-5.91 10.59c-.12 0-.24.01-.36.03-.6.12-1.11.39-1.5.75-.39.39-.6.87-.6 1.41 0 .54.21 1.02.6 1.41.39.36.9.63 1.5.75.12.02.24.03.36.03.33 0 .66-.06.96-.18 1.14-1.26 1.71-2.88 1.71-4.68 0-.39-.03-.78-.09-1.17-.27-.12-.54-.18-.81-.18-.42 0-.81.09-1.17.24zm11.82 0c-.27 0-.54.06-.81.18-.06.39-.09.78-.09 1.17 0 1.8 1.14 3.42 2.28 4.68.3.12.63.18.96.18.12 0 .24-.01.36-.03.6-.12 1.11-.39 1.5-.75.39-.39.6-.87.6-1.41 0-.54-.21-1.02-.6-1.41-.39-.36-.9-.63-1.5-.75-.12-.02-.24-.03-.36-.03-.36-.06-.72-.15-1.05-.24z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">تواصل معنا</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">هل لديك أي أسئلة أو استفسارات؟ لا تتردد في التواصل معنا.</p>
+            <div class="max-w-md mx-auto">
+                <form class="grid grid-cols-1 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 text-sm font-bold mb-2">الاسم</label>
+                        <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600" placeholder="اسمك">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600" placeholder="بريدك الإلكتروني">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 text-sm font-bold mb-2">الرسالة</label>
+                        <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600" placeholder="اكتب رسالتك هنا"></textarea>
+                    </div>
+                    <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-500 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">جميع الحقوق محفوظة &copy; 2025 [اسم التطبيق]</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-white">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-white">شروط الخدمة</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
