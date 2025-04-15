@@ -4,7 +4,7 @@
 
 المميزات الرئيسية: متجاوبة، تصميم عصري.
 
-اللغات: HTML, Tailwind CSS, Google Fonts.
+اللغات: HTML, Tailwind CSS.
 
 
 الترخيص:https://opensource.org/licenses/MIT
