@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي</title>
+    <title>Esaac Manga</title>
     <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -326,17 +326,19 @@
             body.classList.toggle('light-mode');
             header.classList.toggle('light-mode');
             searchInput.classList.toggle('light-mode');
-            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا (قد لا يكون في صفحة المقالات)
+            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا
                 featuresSection.classList.toggle('light-mode');
             }
             footer.classList.toggle('light-mode');
             mainContent.classList.toggle('light-mode');
-            articles.forEach(article => {
-                article.classList.toggle('light-mode');
-            });
+            if (articles) {
+                articles.forEach(article => {
+                    article.classList.toggle('light-mode');
+                });
+            }
 
-            // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
-            // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+            // حفظ حالة الوضع في Local Storage
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
         }
 
         // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
@@ -344,13 +346,38 @@
             const themeToggle = document.getElementById('theme-toggle');
             themeToggle.addEventListener('change', toggleTheme);
 
-            // يمكنك هنا التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
-            // const savedTheme = localStorage.getItem('theme');
-            // if (savedTheme === 'light') {
-            //     document.body.classList.add('light-mode');
-            //     document.querySelector('.header').classList.add('light-mode');
-            //     document.getElementById('theme-toggle').checked = true;
-            // }
+            // التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                const header = document.querySelector('.header');
+                if (header) {
+                    header.classList.add('light-mode');
+                }
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.classList.add('light-mode');
+                }
+                const featuresSection = document.getElementById('features');
+                if (featuresSection) {
+                    featuresSection.classList.add('light-mode');
+                }
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.classList.add('light-mode');
+                }
+                const mainContent = document.querySelector('main');
+                if (mainContent) {
+                    mainContent.classList.add('light-mode');
+                }
+                const articles = document.querySelectorAll('main article');
+                if (articles) {
+                    articles.forEach(article => {
+                        article.classList.add('light-mode');
+                    });
+                }
+                themeToggle.checked = true;
+            }
         });
     </script>
 
