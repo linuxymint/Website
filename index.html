@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esaac Manga</title>
+    <title>موقعي</title>
     <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
             transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
             margin: 0; /* تصفير الهوامش الافتراضية للجسم */
             padding: 0; /* تصفير الحشو الافتراضي للجسم */
+            color: #F7FAFC; /* الوضع المظلم: نص أبيض */
         }
         /* ... باقي أنماط CSS الأساسية من صفحة about.html ... */
         .header {
@@ -143,7 +144,7 @@
         /* أنماط الوضع الفاتح */
         body.light-mode {
             background-color: #F7FAFC; /* bg-gray-100 */
-            color: #A020F0; /* بنفسجي */
+            color: blue; /* الوضع الفاتح: نص أزرق */
         }
 
         .header.light-mode {
@@ -152,7 +153,7 @@
         }
 
         .header.light-mode .username {
-            color: #800080; /* بنفسجي غامق لاسم المستخدم */
+            color: black; /* الوضع الفاتح: اسم المستخدم أسود */
         }
 
         .header.light-mode .search-icon-svg {
@@ -161,17 +162,36 @@
 
         #search-input.light-mode {
             background-color: #EDF2F7; /* bg-gray-200 */
-            color: #A020F0; /* بنفسجي */
+            color: blue; /* الوضع الفاتح: نص أزرق */
         }
 
-        /* ... باقي أنماط CSS للوضع الفاتح من صفحة about.html ... */
+        .light-mode h1,
+        .light-mode h2,
+        .light-mode h3,
+        .light-mode h4,
+        .light-mode h5,
+        .light-mode h6,
+        .light-mode .font-bold,
+        .light-mode .font-semibold {
+            color: black; /* الوضع الفاتح: العناوين والنصوص الهامة باللون الأسود */
+        }
+
+        .light-mode .text-gray-300,
+        .light-mode .text-gray-400 {
+            color: blue; /* الوضع الفاتح: النصوص الرمادية تصبح زرقاء */
+        }
+
+        .light-mode footer {
+            background-color: #F7FAFC; /* bg-gray-100 */
+            color: blue; /* الوضع الفاتح: نص تذييل أزرق */
+        }
+
+        .light-mode footer a {
+            color: blue; /* الوضع الفاتح: روابط تذييل زرقاء */
+        }
 
         /* تعديلات الألوان للوضع المظلم */
-        body {
-            background-color: #1A202C; /* bg-gray-900 */
-            color: #F7FAFC; /* text-gray-100 */
-        }
-
+        /* لون النص في الوضع المظلم تم تحديده بالفعل في قاعدة body الأساسية */
         .header {
             background-color: #2D3748; /* bg-gray-800 */
             color: #F7FAFC; /* text-gray-100 */
