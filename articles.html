@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المقالات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* أنماط CSS الأساسية (كما كانت من قبل) */
+        body {
+            font-family: 'Cairo', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+        }
+        /* ... باقي أنماط CSS الأساسية ... */
+
+        /* أنماط CSS للهيدر الجديد */
+        .header {
+            background-color: #1A202C; /* bg-gray-900 */
+            color: #F7FAFC; /* text-gray-100 */
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            object-fit: cover;
+        }
+
+        .username {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* أنماط أيقونة البحث SVG */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .search-icon-svg {
+            width: 1.5em;
+            height: 1.5em;
+            fill: #F7FAFC; /* text-gray-100 */
+            cursor: pointer;
+            transition: fill 0.3s ease; /* إضافة انتقال سلس لتغيير لون الأيقونة */
+        }
+
+        #search-input {
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #F7FAFC; /* text-gray-100 */
+            border: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            display: none; /* مخفي في البداية */
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+        }
+
+        /* أنماط مفتاح التبديل */
+        .switch {
+            display: block;
+            --width-of-switch: 3.5em;
+            --height-of-switch: 2em;
+            /* size of sliding icon -- sun and moon */
+            --size-of-icon: 1.4em;
+            /* it is like a inline-padding of switch */
+            --slider-offset: 0.3em;
+            position: relative;
+            width: var(--width-of-switch);
+            height: var(--height-of-switch);
+            margin-right: 15px; /* مساحة بين المفتاح وعناصر أخرى */
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f4f4f5;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: var(--size-of-icon,1.4em);
+            width: var(--size-of-icon,1.4em);
+            border-radius: 20px;
+            left: var(--slider-offset,0.3em);
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+            ;
+        transition: .4s;
+        }
+
+        .switch input:checked + .slider {
+            background-color: #303136;
+        }
+
+        .switch input:checked + .slider:before {
+            left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+            background: #303136;
+            /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+            box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+        }
+
+        /* أنماط الوضع الفاتح */
+        body.light-mode {
+            background-color: #F7FAFC; /* bg-gray-100 */
+            color: #A020F0; /* بنفسجي */
+        }
+
+        .header.light-mode {
+            background-color: #FFFFFF; /* bg-white */
+            color: #800080; /* بنفسجي غامق للهيدر */
+        }
+
+        .header.light-mode .username {
+            color: #800080; /* بنفسجي غامق لاسم المستخدم */
+        }
+
+        .header.light-mode .search-icon-svg {
+            fill: #2D3748; /* تعبئة أيقونة البحث باللون الداكن في الوضع الفاتح */
+        }
+
+        #search-input.light-mode {
+            background-color: #EDF2F7; /* bg-gray-200 */
+            color: #A020F0; /* بنفسجي */
+        }
+
+        #features.light-mode {
+            background-color: #E2E8F0; /* bg-gray-200 */
+            color: #A020F0; /* بنفسجي */
+        }
+
+        #features.light-mode .bg-gray-800 {
+            background-color: #FFFFFF; /* خلفية مميزات فاتحة */
+            color: #2D3748; /* لون العناوين داخل المميزات */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        }
+
+        #features.light-mode .bg-gray-600 {
+            background-color: #CBD5E0; /* bg-gray-300 */
+            color: #2D3748; /* لون الأيقونات داخل المميزات */
+        }
+
+        footer.light-mode {
+            background-color: #F7FAFC; /* bg-gray-100 */
+            color: #A020F0; /* بنفسجي */
+        }
+
+        /* تعديلات الألوان للوضع المظلم */
+        body {
+            background-color: #1A202C; /* bg-gray-900 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        .header {
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        .header .search-icon-svg {
+            fill: #F7FAFC; /* text-gray-100 */
+        }
+
+        #search-input {
+            background-color: #4A5568; /* bg-gray-700 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        #features {
+            background-color: #4A5568; /* bg-gray-700 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        #features .bg-gray-800 {
+            background-color: #2D3748; /* خلفية مميزات داكنة */
+            color: #F7FAFC;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        }
+
+        #features .bg-gray-600 {
+            background-color: #718096; /* bg-gray-500 */
+            color: #F7FAFC;
+        }
+
+        footer {
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #A0AEC0; /* text-gray-400 */
+        }
+
+        /* أنماط إضافية لصفحة المقالات */
+        main {
+            padding-top: 80px; /* لإفساح المجال للهيدر الثابت */
+            padding-bottom: 30px;
+        }
+
+        article {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        article h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #F7FAFC; /* لون عنوان المقال */
+        }
+
+        article p {
+            line-height: 1.6;
+            color: #A0AEC0; /* لون نص المقال */
+        }
+
+        .light-mode main article {
+            background-color: #FFFFFF;
+            color: #A020F0; /* بنفسجي فاتح في الوضع الفاتح */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode main article h2 {
+            color: #800080; /* بنفسجي غامق لعناوين المقالات في الوضع الفاتح */
+        }
+
+        .light-mode main article p {
+            color: #A020F0; /* بنفسجي فاتح لنصوص المقالات في الوضع الفاتح */
+        }
+
+        .header-right a { /* Style for the new link */
+            color: #F7FAFC;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .header-right a:hover {
+            color: #A020F0; /* Example hover color */
+        }
+        .header.light-mode .header-right a {
+            color: #800080;
+        }
+        .header.light-mode .header-right a:hover {
+            color: #A020F0;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <div class="header">
+        <div class="header-left">
+            <img src="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" alt="Avatar" class="avatar">
+            <span class="username">Miyomi</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html">الرئيسية</a> <div class="search-container">
+                <svg class="search-icon-svg" viewBox="0 0 24 24" onclick="toggleSearch()">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.13-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="text" id="search-input" placeholder="ابحث في الصفحة..." onkeyup="searchPage()">
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-6 py-8">
+        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-6">
+            <h2>المقال الأول: كيف تبدأ بتعلم البرمجة</h2>
+            <p>البرمجة هي مهارة مطلوبة بشكل كبير في العصر الحالي، سواء كنت تطمح لبناء تطبيقات ويب أو هواتف ذكية أو حتى ألعاب فيديو. قد تبدو البداية صعبة، ولكن مع التوجيه الصحيح والممارسة المستمرة، يمكنك تحقيق هدفك...</p>
+            <p>ابدأ بتحديد لغة البرمجة التي تناسب اهتماماتك. هناك العديد من اللغات الشائعة مثل Python، JavaScript، و Java. كل لغة لها استخداماتها ومجالاتها الخاصة...</p>
+        </article>
+
+        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-6">
+            <h2>المقال الثاني: نصائح لتحسين إنتاجيتك أثناء العمل من المنزل</h2>
+            <p>العمل من المنزل أصبح شائعًا بشكل متزايد، ولكنه قد يواجه بعض التحديات المتعلقة بالحفاظ على الإنتاجية. إليك بعض النصائح التي يمكن أن تساعدك في تحقيق أقصى استفادة من وقتك...</p>
+            <p>أنشئ مساحة عمل مخصصة: حاول تخصيص زاوية أو غرفة في منزلك لتكون مكان عملك. هذا يساعدك على الفصل بين العمل والحياة الشخصية...</p>
+        </article>
+
+        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-6">
+            <h2>المقال الثالث: أهمية ممارسة الرياضة بانتظام لصحة أفضل</h2>
+            <p>ممارسة الرياضة بانتظام لها فوائد صحية عديدة، سواء على المستوى الجسدي أو العقلي. إنها ليست مجرد وسيلة للحفاظ على وزن صحي، بل تلعب دورًا هامًا في الوقاية من الأمراض وتحسين المزاج...</p>
+            <p>حاول دمج النشاط البدني في روتينك اليومي. يمكنك البدء بتمارين بسيطة مثل المشي السريع لمدة 30 دقيقة يوميًا...</p>
+        </article>
+    </main>
+
+    <script>
+        function toggleSearch() {
+            const searchInput = document.getElementById('search-input');
+            searchInput.style.display = searchInput.style.display === 'none' ? 'inline-block' : 'none';
+            if (searchInput.style.display === 'inline-block') {
+                searchInput.focus(); // لجعل حقل البحث نشطًا عند ظهوره
+            }
+        }
+
+        function searchPage() {
+            const searchInput = document.getElementById('search-input');
+            const searchTerm = searchInput.value.toLowerCase();
+            const bodyText = document.body.innerText.toLowerCase();
+            const searchResults = [];
+
+            // يمكنك هنا إضافة منطق أكثر تعقيدًا للبحث وتحديد العناصر التي تطابق البحث
+            // في هذا المثال البسيط، سنقوم فقط بتسجيل ما إذا كان النص موجودًا أم لا
+            if (bodyText.includes(searchTerm)) {
+                console.log("تم العثور على: " + searchTerm);
+                // يمكنك هنا إضافة تعليمات برمجية لتحديد أو إبراز النتائج
+            } else if (searchTerm !== "") {
+                console.log("لم يتم العثور على: " + searchTerm);
+                // يمكنك هنا عرض رسالة بأنه لم يتم العثور على نتائج
+            }
+        }
+
+        // وظيفة لتبديل الوضع الداكن/الفاتح
+        function toggleTheme() {
+            const body = document.body;
+            const header = document.querySelector('.header');
+            const searchInput = document.getElementById('search-input');
+            const featuresSection = document.getElementById('features');
+            const footer = document.querySelector('footer');
+            const themeToggle = document.getElementById('theme-toggle');
+            const searchIcon = document.querySelector('.search-icon-svg');
+            const mainContent = document.querySelector('main');
+            const articles = document.querySelectorAll('main article');
+
+            body.classList.toggle('light-mode');
+            header.classList.toggle('light-mode');
+            searchInput.classList.toggle('light-mode');
+            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا (قد لا يكون في صفحة المقالات)
+                featuresSection.classList.toggle('light-mode');
+            }
+            footer.classList.toggle('light-mode');
+            mainContent.classList.toggle('light-mode');
+            articles.forEach(article => {
+                article.classList.toggle('light-mode');
+            });
+
+            // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
+            // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('change', toggleTheme);
+
+            // يمكنك هنا التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
+            // const savedTheme = localStorage.getItem('theme');
+            // if (savedTheme === 'light') {
+            //     document.body.classList.add('light-mode');
+            //     document.querySelector('.header').classList.add('light-mode');
+            //     document.getElementById('theme-toggle').checked = true;
+            // }
+        });
+    </script>
+
+</body>
+</html>
