@@ -224,6 +224,27 @@
             background-color: #2D3748; /* bg-gray-800 */
             color: #A0AEC0; /* text-gray-400 */
         }
+
+        /* أنماط إضافية للرابط */
+        .header-right a {
+            color: #F7FAFC;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .header-right a:hover {
+            color: #A020F0;
+        }
+
+        .header.light-mode .header-right a {
+            color: #800080;
+        }
+
+        .header.light-mode .header-right a:hover {
+            color: #A020F0;
+        }
     </style>
 </head>
 <body class="bg-gray-900">
@@ -234,6 +255,7 @@
             <span class="username">Miyomi</span>
         </div>
         <div class="header-right">
+            <a href="articles.html">المقالات</a>
             <div class="search-container">
                 <svg class="search-icon-svg" viewBox="0 0 24 24" onclick="toggleSearch()">
                     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.13-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -249,7 +271,7 @@
 
     <section id="features" class="py-16 md:py-24">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">مميزات رائعة تنتظرك</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">مميزات رائعة تنتظرك</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
                 <div class="p-6 bg-gray-800 rounded-lg shadow-md">
                     <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
@@ -359,11 +381,10 @@
                 body.classList.toggle('light-mode');
                 header.classList.toggle('light-mode');
                 searchInput.classList.toggle('light-mode');
-                featuresSection.classList.toggle('light-mode');
+                if (featuresSection) {
+                    featuresSection.classList.toggle('light-mode');
+                }
                 footer.classList.toggle('light-mode');
-
-                // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
-                // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
             }
 
             // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
