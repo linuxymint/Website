@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esaac Manga</title>
+    <title>موقعي</title>
+    <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
-        /* أنماط CSS الأساسية (كما كانت من قبل) */
+        /* أنماط CSS الأساسية */
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Noto Sans Arabic', sans-serif; /* استخدام خط Noto Sans Arabic */
             transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+            margin: 0; /* تصفير الهوامش الافتراضية للجسم */
+            padding: 0; /* تصفير الحشو الافتراضي للجسم */
         }
-        /* ... باقي أنماط CSS الأساسية ... */
-
-        /* أنماط CSS للهيدر الجديد */
+        /* ... باقي أنماط CSS الأساسية من صفحة about.html ... */
         .header {
             background-color: #1A202C; /* bg-gray-900 */
             color: #F7FAFC; /* text-gray-100 */
@@ -47,6 +50,7 @@
         .username {
             font-size: 1.2em;
             font-weight: bold;
+            font-family: 'Cairo', sans-serif; /* استخدام خط Cairo لاسم المستخدم */
         }
 
         .header-right {
@@ -164,26 +168,7 @@
             color: #A020F0; /* بنفسجي */
         }
 
-        #features.light-mode {
-            background-color: #E2E8F0; /* bg-gray-200 */
-            color: #A020F0; /* بنفسجي */
-        }
-
-        #features.light-mode .bg-gray-800 {
-            background-color: #FFFFFF; /* خلفية مميزات فاتحة */
-            color: #2D3748; /* لون العناوين داخل المميزات */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        }
-
-        #features.light-mode .bg-gray-600 {
-            background-color: #CBD5E0; /* bg-gray-300 */
-            color: #2D3748; /* لون الأيقونات داخل المميزات */
-        }
-
-        footer.light-mode {
-            background-color: #F7FAFC; /* bg-gray-100 */
-            color: #A020F0; /* بنفسجي */
-        }
+        /* ... باقي أنماط CSS للوضع الفاتح من صفحة about.html ... */
 
         /* تعديلات الألوان للوضع المظلم */
         body {
@@ -205,47 +190,33 @@
             color: #F7FAFC; /* text-gray-100 */
         }
 
-        #features {
-            background-color: #4A5568; /* bg-gray-700 */
-            color: #F7FAFC; /* text-gray-100 */
-        }
+        /* ... باقي تعديلات الألوان للوضع المظلم من صفحة about.html ... */
 
-        #features .bg-gray-800 {
-            background-color: #2D3748; /* خلفية مميزات داكنة */
-            color: #F7FAFC;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        }
-
-        #features .bg-gray-600 {
-            background-color: #718096; /* bg-gray-500 */
-            color: #F7FAFC;
-        }
-
-        footer {
-            background-color: #2D3748; /* bg-gray-800 */
-            color: #A0AEC0; /* text-gray-400 */
-        }
-
-        /* أنماط إضافية للرابط */
-        .header-right a {
+        .header-right a { /* Style for the new link */
             color: #F7FAFC;
             text-decoration: none;
             margin-right: 15px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
-
         .header-right a:hover {
-            color: #A020F0;
+            color: #64FFDA;
         }
-
         .header.light-mode .header-right a {
-            color: #800080;
+            color: #007ACC;
+        }
+        .header.light-mode .header-right a:hover {
+            color: #007ACC;
         }
 
-        .header.light-mode .header-right a:hover {
-            color: #A020F0;
+        /* أنماط إضافية لصفحة المقالات (إذا كانت موجودة) */
+        main {
+            padding-top: 80px; /* لإفساح المجال للهيدر الثابت */
+            padding-bottom: 30px;
         }
+
+        /* ... أنماط إضافية لصفحة المقالات من صفحة about.html ... */
+
     </style>
 </head>
 <body class="bg-gray-900">
@@ -256,7 +227,10 @@
             <span class="username">Miyomi</span>
         </div>
         <div class="header-right">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">عني</a>
             <a href="articles.html">المقالات</a>
+            <a href="contact.html">تواصل</a>
             <div class="search-container">
                 <svg class="search-icon-svg" viewBox="0 0 24 24" onclick="toggleSearch()">
                     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.13-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -270,143 +244,124 @@
         </div>
     </div>
 
-    <section id="features" class="py-16 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">مميزات رائعة تنتظرك</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
-                <div class="p-6 bg-gray-800 rounded-lg shadow-md">
-                    <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">ميزة 1: السرعة</h3>
-                    <p class="text-gray-300">وصف قصير للميزة الأولى وكيف تفيد المستخدم.</p>
-                </div>
-                <div class="p-6 bg-gray-800 rounded-lg shadow-md">
-                     <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
+    <main class="container mx-auto px-6 py-8">
+        <h1 class="text-3xl font-bold text-white mb-6">مرحباً بك في موقعي!</h1>
+        <p class="text-lg text-gray-300 mb-4">هذا هو المحتوى الرئيسي لصفحتك الرئيسية. يمكنك إضافة أي معلومات أو أقسام تريدها هنا.</p>
+        <p class="text-gray-300">يمكنك إضافة المزيد من الفقرات أو الصور أو أي عناصر أخرى حسب محتوى موقعك.</p>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+        <section id="features" class="py-8">
+            <h2 class="text-2xl font-bold text-white mb-4">المميزات</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                        ✨
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">ميزة 2: سهولة الاستخدام</h3>
-                    <p class="text-gray-300">وصف قصير للميزة الثانية وكيف تفيد المستخدم.</p>
+                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 1</h3>
+                    <p class="text-gray-400">وصف موجز للميزة الأولى.</p>
                 </div>
-                <div class="p-6 bg-gray-800 rounded-lg shadow-md">
-                     <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                        🚀
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">ميزة 3: تصميم جذاب</h3>
-                    <p class="text-gray-300">وصف قصير للميزة الثالثة وكيف تفيد المستخدم.</p>
+                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 2</h3>
+                    <p class="text-gray-400">وصف موجز للميزة الثانية.</p>
                 </div>
-                <div class="p-6 bg-gray-800 rounded-lg shadow-md">
-                     <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
-                        <a href='https://postimg.cc/47VNnqxn' target='_blank'><img src='https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png' border='0' alt='anime-boy-shock-png-design-5691437'/></a>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                        💡
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">صورة مفاجئة</h3>
-                    <p class="text-gray-300">صورة لشخصية أنمي بتعبير مصدوم.</p>
+                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 3</h3>
+                    <p class="text-gray-400">وصف موجز للميزة الثالثة.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-gray-800 text-gray-400 py-8">
         <div class="container mx-auto px-6 text-center flex flex-col items-center">
             <div class="mb-2">
-                <a href="about.html" class="text-gray-400 hover:text-white">About Me</a>
+                <a href="contact.html" class="text-gray-400 hover:text-white">تواصل</a>
                 <span class="mx-2">|</span>
-                <a href="contact.html" class="text-gray-400 hover:text-white">Contact</a>
+                <a href="articles.html" class="text-gray-400 hover:text-white">المقالات</a>
+                <span class="mx-2">|</span>
+                <a href="about.html" class="text-gray-400 hover:text-white">عني</a>
+                <span class="mx-2">|</span>
+                <a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a>
             </div>
             <p>جميع الحقوق محفوظة &copy; 2025 </p>
         </div>
     </footer>
 
     <script>
-        const buttons = document.querySelectorAll('.store-button');
-        let longPressTimer;
+        function toggleSearch() {
+            const searchInput = document.getElementById('search-input');
+            searchInput.style.display = searchInput.style.display === 'none' ? 'inline-block' : 'none';
+            if (searchInput.style.display === 'inline-block') {
+                searchInput.focus(); // لجعل حقل البحث نشطًا عند ظهوره
+            }
+        }
 
-        buttons.forEach(button => {
-            const effectElement = button.querySelector('.button-click-effect');
+        function searchPage() {
+            const searchInput = document.getElementById('search-input');
+            const searchTerm = searchInput.value.toLowerCase();
+            const bodyText = document.body.innerText.toLowerCase();
+            const searchResults = [];
 
-            button.addEventListener('mousedown', () => {
-                longPressTimer = setTimeout(() => {
-                    effectElement.classList.add('green');
-                    effectElement.classList.remove('red');
-                }, 500); // Adjust the long press duration (in milliseconds)
-            });
+            // يمكنك هنا إضافة منطق أكثر تعقيدًا للبحث وتحديد العناصر التي تطابق البحث
+            // في هذا المثال البسيط، سنقوم فقط بتسجيل ما إذا كان النص موجودًا أم لا
+            if (bodyText.includes(searchTerm)) {
+                console.log("تم العثور على: " + searchTerm);
+                // يمكنك هنا إضافة تعليمات برمجية لتحديد أو إبراز النتائج
+            } else if (searchTerm !== "") {
+                console.log("لم يتم العثور على: " + searchTerm);
+                // يمكنك هنا عرض رسالة بأنه لم يتم العثور على نتائج
+            }
+        }
 
-            button.addEventListener('mouseup', () => {
-                clearTimeout(longPressTimer);
-                if (!effectElement.classList.contains('green')) {
-                    effectElement.classList.add('red');
-                }
-                setTimeout(() => {
-                    effectElement.classList.remove('red', 'green');
-                }, 300); // Duration of the red/green effect
-            });
+        // وظيفة لتبديل الوضع الداكن/الفاتح
+        function toggleTheme() {
+            const body = document.body;
+            const header = document.querySelector('.header');
+            const searchInput = document.getElementById('search-input');
+            const featuresSection = document.getElementById('features');
+            const footer = document.querySelector('footer');
+            const themeToggle = document.getElementById('theme-toggle');
+            const searchIcon = document.querySelector('.search-icon-svg');
+            const mainContent = document.querySelector('main');
+            const articles = document.querySelectorAll('main article');
 
-            button.addEventListener('mouseleave', () => {
-                clearTimeout(longPressTimer);
-                effectElement.classList.remove('red', 'green');
-            });
-        </script>
-
-        <script>
-            function toggleSearch() {
-                const searchInput = document.getElementById('search-input');
-                searchInput.style.display = searchInput.style.display === 'none' ? 'inline-block' : 'none';
-                if (searchInput.style.display === 'inline-block') {
-                    searchInput.focus(); // لجعل حقل البحث نشطًا عند ظهوره
-                }
+            body.classList.toggle('light-mode');
+            header.classList.toggle('light-mode');
+            searchInput.classList.toggle('light-mode');
+            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا
+                featuresSection.classList.toggle('light-mode');
+            }
+            footer.classList.toggle('light-mode');
+            mainContent.classList.toggle('light-mode');
+            if (articles) {
+                articles.forEach(article => {
+                    article.classList.toggle('light-mode');
+                });
             }
 
-            function searchPage() {
-                const searchInput = document.getElementById('search-input');
-                const searchTerm = searchInput.value.toLowerCase();
-                const bodyText = document.body.innerText.toLowerCase();
-                const searchResults = [];
+            // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
+            // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
 
-                // يمكنك هنا إضافة منطق أكثر تعقيدًا للبحث وتحديد العناصر التي تطابق البحث
-                // في هذا المثال البسيط، سنقوم فقط بتسجيل ما إذا كان النص موجودًا أم لا
-                if (bodyText.includes(searchTerm)) {
-                    console.log("تم العثور على: " + searchTerm);
-                    // يمكنك هنا إضافة تعليمات برمجية لتحديد أو إبراز النتائج
-                } else if (searchTerm !== "") {
-                    console.log("لم يتم العثور على: " + searchTerm);
-                    // يمكنك هنا عرض رسالة بأنه لم يتم العثور على نتائج
-                }
-            }
+        // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('change', toggleTheme);
 
-            // وظيفة لتبديل الوضع الداكن/الفاتح
-            function toggleTheme() {
-                const body = document.body;
-                const header = document.querySelector('.header');
-                const searchInput = document.getElementById('search-input');
-                const featuresSection = document.getElementById('features');
-                const footer = document.querySelector('footer');
-                const themeToggle = document.getElementById('theme-toggle');
-                const searchIcon = document.querySelector('.search-icon-svg');
-
-                body.classList.toggle('light-mode');
-                header.classList.toggle('light-mode');
-                searchInput.classList.toggle('light-mode');
-                if (featuresSection) {
-                    featuresSection.classList.toggle('light-mode');
-                }
-                footer.classList.toggle('light-mode');
-            }
-
-            // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
-            document.addEventListener('DOMContentLoaded', function() {
-                const themeToggle = document.getElementById('theme-toggle');
-                themeToggle.addEventListener('change', toggleTheme);
-
-                // يمكنك هنا التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
-                // const savedTheme = localStorage.getItem('theme');
-                // if (savedTheme === 'light') {
-                //     document.body.classList.add('light-mode');
-                //     document.querySelector('.header').classList.add('light-mode');
-                //     document.getElementById('theme-toggle').checked = true;
-                // }
-            });
-        </script>
+            // يمكنك هنا التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
+            // const savedTheme = localStorage.getItem('theme');
+            // if (savedTheme === 'light') {
+            //     document.body.classList.add('light-mode');
+            //     document.querySelector('.header').classList.add('light-mode');
+            //     document.getElementById('theme-toggle').checked = true;
+            // }
+        });
+    </script>
 
 </body>
 </html>
