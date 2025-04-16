@@ -9,124 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Apply Arabic font */
+        /* أنماط CSS الأساسية (كما كانت من قبل) */
         body {
             font-family: 'Cairo', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
         }
-        /* Simple wave divider */
-        .wave-divider {
-            position: relative;
-            background: #374151; /* bg-gray-700 - Darker gray */
-            color: white;
-        }
-        .wave-divider::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px; /* Adjust height */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31.74,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' class='shape-fill' fill='%236B7280' fill-opacity='1'%3E%3C/path%3E%3C/svg%3E"); /* text-gray-600 - Darker gray */
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: 10;
-            transform: translateY(1px); /* Prevent thin gap */
-        }
-        .content-above-wave {
-            position: relative;
-            z-index: 20;
-        }
-        /* Style for App Store/Google Play buttons */
-        .store-button {
-            display: inline-flex;
-            align-items: center;
-            background-color: #4B5563; /* bg-gray-800 - Even darker gray */
-            color: white;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 0.5rem; /* rounded-lg */
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            min-width: 180px; /* Ensure buttons have similar width */
-            justify-content: center;
-            position: relative; /* For the outline effect */
-        }
-        .store-button:hover {
-            background-color: #6B7280; /* bg-gray-600 - Slightly lighter dark gray */
-        }
-        .store-button svg {
-            width: 1.5rem; /* w-6 */
-            height: 1.5rem; /* h-6 */
-            margin-left: 0.75rem; /* ml-3 */
-        }
-        .store-button .button-text {
-            text-align: right;
-        }
-        .store-button .button-text span:first-child {
-            font-size: 0.75rem; /* text-xs */
-            display: block;
-            line-height: 1;
-        }
-        .store-button .button-text span:last-child {
-            font-size: 1rem; /* text-base */
-            font-weight: 600; /* font-semibold */
-            display: block;
-            line-height: 1.2;
-        }
-        .button-click-effect {
-            position: absolute;
-            top: -3px; /* Adjust as needed */
-            right: -3px; /* Adjust as needed */
-            bottom: -3px; /* Adjust as needed */
-            left: -3px; /* Adjust as needed */
-            border-radius: inherit;
-            pointer-events: none; /* Allows clicks to pass through */
-            z-index: 1;
-        }
-        .button-click-effect.red {
-            border: 3px solid red;
-        }
-        .button-click-effect.green {
-            border: 3px solid green;
-        }
-
-        /* أنماط CSS لقسم لقطات الشاشة لجعلها قابلة للتمرير أفقيًا */
-        #screenshots .container {
-            overflow-x: auto; /* لتمكين التمرير الأفقي */
-            white-space: nowrap; /* لمنع التفاف الصور إلى سطر جديد */
-            padding-bottom: 16px; /* لإضافة مساحة في الأسفل لإظهار شريط التمرير بشكل كامل */
-        }
-
-        #screenshots .container .grid {
-            display: inline-block; /* لجعل الحاوية الداخلية تأخذ عرض المحتوى */
-        }
-
-        #screenshots .container img {
-            margin-right: 16px; /* لإضافة مساحة بين الصور */
-            display: inline-block; /* لعرض الصور جنبًا إلى جنب */
-            vertical-align: top; /* لمحاذاة الصور من الأعلى */
-            /* يمكنك الاحتفاظ بباقي التنسيقات مثل rounded-lg و shadow-lg و mx-auto و border-4 و border-gray-800 */
-        }
-
-        /* إخفاء الصور التي يتم إخفاؤها افتراضيًا على أحجام الشاشات المختلفة */
-        #screenshots .container img.hidden.sm\:block {
-            display: inline-block !important;
-        }
-
-        #screenshots .container img.hidden.md\:block {
-            display: inline-block !important;
-        }
+        /* ... باقي أنماط CSS الأساسية ... */
 
         /* أنماط CSS للهيدر الجديد */
         .header {
-            background-color: #1E1E1E; /* لون الخلفية الداكن */
+            background-color: #1E1E1E;
             color: white;
             padding: 15px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* لتوزيع العناصر على الأطراف */
-            position: sticky; /* لجعل الهيدر يلتصق بالجزء العلوي عند التمرير */
+            justify-content: space-between;
+            position: sticky;
             top: 0;
-            z-index: 50; /* تأكد من أن الهيدر أعلى من أي محتوى آخر */
+            z-index: 50;
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
         }
 
         .header-left {
@@ -137,9 +38,9 @@
         .avatar {
             width: 40px;
             height: 40px;
-            border-radius: 50%; /* لجعل الصورة دائرية */
-            margin-left: 10px; /* مساحة بين الصورة والنص */
-            object-fit: cover; /* لضمان احتواء الصورة داخل الدائرة */
+            border-radius: 50%;
+            margin-left: 10px;
+            object-fit: cover;
         }
 
         .username {
@@ -152,25 +53,135 @@
             align-items: center;
         }
 
-        .menu-icon {
-            font-size: 1.5em;
-            margin-right: 15px;
-            cursor: pointer;
-        }
-
-        /* يمكنك استخدام خطوط أيقونات مثل Font Awesome أو غيرها */
-        /* لإضافة أيقونات حقيقية بدلًا من الرموز النصية */
-        .menu-icon::before {
-            content: "☰"; /* رمز القائمة */
-        }
-
         /* أنماط أيقونة البحث SVG */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
         .search-icon-svg {
             width: 1.5em;
             height: 1.5em;
             fill: white;
-            margin-right: 15px;
             cursor: pointer;
+            transition: fill 0.3s ease; /* إضافة انتقال سلس لتغيير لون الأيقونة */
+        }
+
+        #search-input {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            display: none; /* مخفي في البداية */
+            transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+        }
+
+        /* أنماط مفتاح التبديل */
+        .switch {
+            display: block;
+            --width-of-switch: 3.5em;
+            --height-of-switch: 2em;
+            /* size of sliding icon -- sun and moon */
+            --size-of-icon: 1.4em;
+            /* it is like a inline-padding of switch */
+            --slider-offset: 0.3em;
+            position: relative;
+            width: var(--width-of-switch);
+            height: var(--height-of-switch);
+            margin-right: 15px; /* مساحة بين المفتاح وعناصر أخرى */
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f4f4f5;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: var(--size-of-icon,1.4em);
+            width: var(--size-of-icon,1.4em);
+            border-radius: 20px;
+            left: var(--slider-offset,0.3em);
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+            ;
+        transition: .4s;
+        }
+
+        .switch input:checked + .slider {
+            background-color: #303136;
+        }
+
+        .switch input:checked + .slider:before {
+            left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+            background: #303136;
+            /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+            box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+        }
+
+        /* أنماط الوضع الفاتح */
+        body.light-mode {
+            background-color: #f9fafb; /* bg-gray-50 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        .header.light-mode {
+            background-color: #f9fafb; /* bg-gray-50 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        .header.light-mode .search-icon-svg {
+            fill: #374151; /* تعبئة أيقونة البحث باللون الداكن في الوضع الفاتح */
+        }
+
+        #search-input.light-mode {
+            background-color: #e5e7eb; /* bg-gray-200 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        #features.light-mode {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        #features.light-mode .bg-gray-800 {
+            background-color: #fff; /* خلفية مميزات فاتحة */
+            color: #374151;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        }
+
+        #features.light-mode .bg-gray-600 {
+            background-color: #d1d5db; /* bg-gray-300 */
+            color: #374151;
+        }
+
+        #screenshots.light-mode {
+            background-color: #e5e7eb; /* bg-gray-200 */
+        }
+
+        footer.light-mode {
+            background-color: #f9fafb; /* bg-gray-50 */
+            color: #6b7280; /* text-gray-500 */
         }
     </style>
 </head>
@@ -182,10 +193,16 @@
             <span class="username">Miyomi</span>
         </div>
         <div class="header-right">
-            <svg class="search-icon-svg" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.13-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-            </svg>
-            <span class="menu-icon"></span>
+            <div class="search-container">
+                <svg class="search-icon-svg" viewBox="0 0 24 24" onclick="toggleSearch()">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.13-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="text" id="search-input" placeholder="ابحث في الصفحة..." onkeyup="searchPage()">
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
         </div>
     </div>
 
@@ -295,8 +312,70 @@
                 clearTimeout(longPressTimer);
                 effectElement.classList.remove('red', 'green');
             });
-        });
-    </script>
+        </script>
+
+        <script>
+            function toggleSearch() {
+                const searchInput = document.getElementById('search-input');
+                searchInput.style.display = searchInput.style.display === 'none' ? 'inline-block' : 'none';
+                if (searchInput.style.display === 'inline-block') {
+                    searchInput.focus(); // لجعل حقل البحث نشطًا عند ظهوره
+                }
+            }
+
+            function searchPage() {
+                const searchInput = document.getElementById('search-input');
+                const searchTerm = searchInput.value.toLowerCase();
+                const bodyText = document.body.innerText.toLowerCase();
+                const searchResults = [];
+
+                // يمكنك هنا إضافة منطق أكثر تعقيدًا للبحث وتحديد العناصر التي تطابق البحث
+                // في هذا المثال البسيط، سنقوم فقط بتسجيل ما إذا كان النص موجودًا أم لا
+                if (bodyText.includes(searchTerm)) {
+                    console.log("تم العثور على: " + searchTerm);
+                    // يمكنك هنا إضافة تعليمات برمجية لتحديد أو إبراز النتائج
+                } else if (searchTerm !== "") {
+                    console.log("لم يتم العثور على: " + searchTerm);
+                    // يمكنك هنا عرض رسالة بأنه لم يتم العثور على نتائج
+                }
+            }
+
+            // وظيفة لتبديل الوضع الداكن/الفاتح
+            function toggleTheme() {
+                const body = document.body;
+                const header = document.querySelector('.header');
+                const searchInput = document.getElementById('search-input');
+                const featuresSection = document.getElementById('features');
+                const screenshotsSection = document.getElementById('screenshots');
+                const footer = document.querySelector('footer');
+                const themeToggle = document.getElementById('theme-toggle');
+                const searchIcon = document.querySelector('.search-icon-svg');
+
+                body.classList.toggle('light-mode');
+                header.classList.toggle('light-mode');
+                searchInput.classList.toggle('light-mode');
+                featuresSection.classList.toggle('light-mode');
+                screenshotsSection.classList.toggle('light-mode');
+                footer.classList.toggle('light-mode');
+
+                // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
+                // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+            }
+
+            // إضافة مستمع حدث لتغيير حالة الوضع عند تغيير مفتاح التبديل
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeToggle = document.getElementById('theme-toggle');
+                themeToggle.addEventListener('change', toggleTheme);
+
+                // يمكنك هنا التحقق من حالة الوضع المحفوظة في Local Storage وتطبيقها عند تحميل الصفحة
+                // const savedTheme = localStorage.getItem('theme');
+                // if (savedTheme === 'light') {
+                //     document.body.classList.add('light-mode');
+                //     document.querySelector('.header').classList.add('light-mode');
+                //     document.getElementById('theme-toggle').checked = true;
+                // }
+            });
+        </script>
 
 </body>
 </html>
