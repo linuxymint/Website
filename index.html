@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقعي</title>
     <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* أنماط CSS الأساسية */
         body {
-            font-family: 'Tajawal', sans-serif; /* استخدام خط Tajawal */
-            font-weight: 500; /* استخدام الوزن Medium 500 */
+            font-family: 'Cairo', sans-serif; /* استخدام خط Cairo */
             transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
             margin: 0; /* تصفير الهوامش الافتراضية للجسم */
             padding: 0; /* تصفير الحشو الافتراضي للجسم */
@@ -48,7 +47,6 @@
         .username {
             font-size: 1.2em;
             font-weight: bold;
-            /* تم حذف: font-family: 'Cairo', sans-serif; */
         }
 
         .header-right {
@@ -328,16 +326,14 @@
             body.classList.toggle('light-mode');
             header.classList.toggle('light-mode');
             searchInput.classList.toggle('light-mode');
-            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا
+            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا (قد لا يكون في صفحة المقالات)
                 featuresSection.classList.toggle('light-mode');
             }
             footer.classList.toggle('light-mode');
             mainContent.classList.toggle('light-mode');
-            if (articles) {
-                articles.forEach(article => {
-                    article.classList.toggle('light-mode');
-                });
-            }
+            articles.forEach(article => {
+                article.classList.toggle('light-mode');
+            });
 
             // يمكنك هنا حفظ حالة الوضع في Local Storage إذا أردت ذلك
             // localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
