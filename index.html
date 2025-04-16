@@ -18,8 +18,8 @@
 
         /* أنماط CSS للهيدر الجديد */
         .header {
-            background-color: #1E1E1E;
-            color: white;
+            background-color: #1A202C; /* bg-gray-900 */
+            color: #F7FAFC; /* text-gray-100 */
             padding: 15px 20px;
             display: flex;
             align-items: center;
@@ -63,14 +63,14 @@
         .search-icon-svg {
             width: 1.5em;
             height: 1.5em;
-            fill: white;
+            fill: #F7FAFC; /* text-gray-100 */
             cursor: pointer;
             transition: fill 0.3s ease; /* إضافة انتقال سلس لتغيير لون الأيقونة */
         }
 
         #search-input {
-            background-color: #333;
-            color: white;
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #F7FAFC; /* text-gray-100 */
             border: none;
             padding: 8px 10px;
             border-radius: 5px;
@@ -141,47 +141,88 @@
 
         /* أنماط الوضع الفاتح */
         body.light-mode {
-            background-color: #f9fafb; /* bg-gray-50 */
-            color: #374151; /* text-gray-700 */
+            background-color: #F7FAFC; /* bg-gray-100 */
+            color: #2D3748; /* text-gray-800 */
         }
 
         .header.light-mode {
-            background-color: #f9fafb; /* bg-gray-50 */
-            color: #374151; /* text-gray-700 */
+            background-color: #FFFFFF; /* bg-white */
+            color: #2D3748; /* text-gray-800 */
         }
 
         .header.light-mode .search-icon-svg {
-            fill: #374151; /* تعبئة أيقونة البحث باللون الداكن في الوضع الفاتح */
+            fill: #2D3748; /* تعبئة أيقونة البحث باللون الداكن في الوضع الفاتح */
         }
 
         #search-input.light-mode {
-            background-color: #e5e7eb; /* bg-gray-200 */
-            color: #374151; /* text-gray-700 */
+            background-color: #EDF2F7; /* bg-gray-200 */
+            color: #2D3748; /* text-gray-800 */
         }
 
         #features.light-mode {
-            background-color: #f3f4f6; /* bg-gray-100 */
-            color: #374151; /* text-gray-700 */
+            background-color: #E2E8F0; /* bg-gray-200 */
+            color: #2D3748; /* text-gray-800 */
         }
 
         #features.light-mode .bg-gray-800 {
-            background-color: #fff; /* خلفية مميزات فاتحة */
-            color: #374151;
+            background-color: #FFFFFF; /* خلفية مميزات فاتحة */
+            color: #2D3748;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
         }
 
         #features.light-mode .bg-gray-600 {
-            background-color: #d1d5db; /* bg-gray-300 */
-            color: #374151;
+            background-color: #CBD5E0; /* bg-gray-300 */
+            color: #2D3748;
         }
 
         footer.light-mode {
-            background-color: #f9fafb; /* bg-gray-50 */
-            color: #6b7280; /* text-gray-500 */
+            background-color: #F7FAFC; /* bg-gray-100 */
+            color: #718096; /* text-gray-600 */
+        }
+
+        /* تعديلات الألوان للوضع المظلم */
+        body {
+            background-color: #1A202C; /* bg-gray-900 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        .header {
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        .header .search-icon-svg {
+            fill: #F7FAFC; /* text-gray-100 */
+        }
+
+        #search-input {
+            background-color: #4A5568; /* bg-gray-700 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        #features {
+            background-color: #4A5568; /* bg-gray-700 */
+            color: #F7FAFC; /* text-gray-100 */
+        }
+
+        #features .bg-gray-800 {
+            background-color: #2D3748; /* خلفية مميزات داكنة */
+            color: #F7FAFC;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        }
+
+        #features .bg-gray-600 {
+            background-color: #718096; /* bg-gray-500 */
+            color: #F7FAFC;
+        }
+
+        footer {
+            background-color: #2D3748; /* bg-gray-800 */
+            color: #A0AEC0; /* text-gray-400 */
         }
     </style>
 </head>
-<body class="bg-gray-800 text-gray-300">
+<body class="bg-gray-900 text-gray-100">
 
     <div class="header">
         <div class="header-left">
@@ -202,7 +243,7 @@
         </div>
     </div>
 
-    <section id="features" class="py-16 md:py-24 bg-gray-700 text-gray-300">
+    <section id="features" class="py-16 md:py-24">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">مميزات رائعة تنتظرك</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
@@ -211,7 +252,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 text-white">ميزة 1: السرعة</h3>
-                    <p class="text-gray-400">وصف قصير للميزة الأولى وكيف تفيد المستخدم.</p>
+                    <p class="text-gray-300">وصف قصير للميزة الأولى وكيف تفيد المستخدم.</p>
                 </div>
                 <div class="p-6 bg-gray-800 rounded-lg shadow-md">
                      <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
@@ -219,21 +260,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 text-white">ميزة 2: سهولة الاستخدام</h3>
-                    <p class="text-gray-400">وصف قصير للميزة الثانية وكيف تفيد المستخدم.</p>
+                    <p class="text-gray-300">وصف قصير للميزة الثانية وكيف تفيد المستخدم.</p>
                 </div>
                 <div class="p-6 bg-gray-800 rounded-lg shadow-md">
                      <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 text-white">ميزة 3: تصميم جذاب</h3>
-                    <p class="text-gray-400">وصف قصير للميزة الثالثة وكيف تفيد المستخدم.</p>
+                    <p class="text-gray-300">وصف قصير للميزة الثالثة وكيف تفيد المستخدم.</p>
                 </div>
                 <div class="p-6 bg-gray-800 rounded-lg shadow-md">
                      <div class="bg-gray-600 text-gray-200 rounded-full h-16 w-16 inline-flex items-center justify-center mb-4">
                         <a href='https://postimg.cc/47VNnqxn' target='_blank'><img src='https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png' border='0' alt='anime-boy-shock-png-design-5691437'/></a>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 text-white">صورة مفاجئة</h3>
-                    <p class="text-gray-400">صورة لشخصية أنمي بتعبير مصدوم.</p>
+                    <p class="text-gray-300">صورة لشخصية أنمي بتعبير مصدوم.</p>
                 </div>
             </div>
         </div>
