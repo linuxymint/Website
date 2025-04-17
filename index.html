@@ -19,7 +19,7 @@
             color: #F7FAFC; /* الوضع المظلم: نص أبيض */
             background-color: #212121; /* الوضع المظلم: خلفية باللون #212121 */
         }
-        /* ... باقي أنماط CSS الأساسية من صفحة about.html ... */
+        /* ... باقي أنماط CSS الأساسية ... */
         .header {
             background-color: #2D3748; /* bg-gray-800 */
             color: #F7FAFC; /* text-gray-100 */
@@ -167,8 +167,8 @@
         }
 
         .light-mode footer {
-            background-color: #F7FAFC; /* bg-gray-100 */
-            color: blue; /* الوضع الفاتح: نص تذييل أزرق */
+            background-color: #212121; /* الوضع الفاتح: تذييل باللون #212121 */
+            color: blue; /* لون نص التذييل في الوضع الفاتح */
         }
 
         .light-mode footer a {
@@ -176,7 +176,7 @@
         }
 
         /* تعديلات الألوان للوضع المظلم */
-        /* لون النص في الوضع المظلم تم تحديده بالفعل في قاعدة body الأساسية */
+        /* لون النص والخلفية تم تحديدهما بالفعل في قاعدة body الأساسية */
         .header {
             background-color: #2D3748; /* bg-gray-800 */
             color: #F7FAFC; /* text-gray-100 */
@@ -191,7 +191,7 @@
             color: #F7FAFC; /* text-gray-100 */
         }
 
-        /* ... باقي تعديلات الألوان للوضع المظلم من صفحة about.html ... */
+        /* ... باقي تعديلات الألوان للوضع المظلم ... */
 
         .header-right a { /* Style for the new link */
             color: #F7FAFC;
@@ -210,14 +210,81 @@
             color: #007ACC;
         }
 
-        /* أنماط إضافية لصفحة المقالات (إذا كانت موجودة) */
-        main {
-            padding-top: 80px; /* لإفساح المجال للهيدر الثابت */
-            padding-bottom: 30px;
+        /* أنماط إضافية لصفحة المقالات */
+        #latest-articles {
+            padding: 20px;
         }
 
-        /* ... أنماط إضافية لصفحة المقالات من صفحة about.html ... */
+        #latest-articles h2 {
+            font-size: 2xl;
+            font-weight: bold;
+            color: white; /* لون العنوان في الوضع المظلم */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
 
+        .light-mode #latest-articles h2 {
+            color: blue; /* لون العنوان في الوضع الفاتح */
+        }
+
+        .article-item {
+            background-color: #2D3748; /* لون خلفية المقالة في الوضع المظلم */
+            color: #F7FAFC; /* لون نص المقالة في الوضع المظلم */
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .light-mode .article-item {
+            background-color: #EDF2F7; /* لون خلفية المقالة في الوضع الفاتح */
+            color: blue; /* لون نص المقالة في الوضع الفاتح */
+        }
+
+        .article-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-link {
+            color: #64FFDA; /* لون الرابط في الوضع المظلم */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #4A5568;
+        }
+
+        .light-mode .article-link {
+            color: #007ACC; /* لون الرابط في الوضع الفاتح */
+        }
+
+        .light-mode .article-link:hover {
+            color: #0366d6;
+        }
+
+        /* أنماط التذييل */
+        footer {
+            background-color: #212121; /* لون خلفية التذييل في الوضع المظلم */
+            color: #F7FAFC; /* لون نص التذييل في الوضع المظلم */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #F7FAFC; /* لون روابط التذييل في الوضع المظلم */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .light-mode footer {
+            background-color: #212121; /* لون خلفية التذييل في الوضع الفاتح */
+            color: blue; /* لون نص التذييل في الوضع الفاتح */
+        }
+
+        .light-mode footer a {
+            color: blue; /* لون روابط التذييل في الوضع الفاتح */
+        }
     </style>
 </head>
 <body class="">
@@ -245,46 +312,44 @@
     <main class="container mx-auto px-6 py-8">
         <h1 class="text-3xl font-bold text-white mb-6">مرحباً بك في موقعي!</h1>
         <p class="text-lg text-gray-300 mb-4">هذا هو المحتوى الرئيسي لصفحتك الرئيسية. يمكنك إضافة أي معلومات أو أقسام تريدها هنا.</p>
-        <p class="text-gray-300">يمكنك إضافة المزيد من الفقرات أو الصور أو أي عناصر أخرى حسب محتوى موقعك.</p>
 
-        <section id="features" class="py-8">
-            <h2 class="text-2xl font-bold text-white mb-4">المميزات</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-800 rounded-lg p-6">
-                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
-                        ✨
-                    </div>
-                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 1</h3>
-                    <p class="text-gray-400">وصف موجز للميزة الأولى.</p>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6">
-                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
-                        🚀
-                    </div>
-                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 2</h3>
-                    <p class="text-gray-400">وصف موجز للميزة الثانية.</p>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6">
-                    <div class="bg-gray-600 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
-                        💡
-                    </div>
-                    <h3 class="font-semibold text-lg text-white mb-2">ميزة 3</h3>
-                    <p class="text-gray-400">وصف موجز للميزة الثالثة.</p>
-                </div>
+        <section id="latest-articles" class="py-8">
+            <h2 class="text-2xl font-bold text-white mb-4">آخر المقالات</h2>
+
+            <div class="article-item">
+                <h3 class="article-title">عنوان المقال الأول</h3>
+                <p>وصف موجز للمقال الأول...</p>
+                <a href="#" class="article-link">اقرأ المزيد</a>
+            </div>
+
+            <div class="article-item">
+                <h3 class="article-title">عنوان المقال الثاني</h3>
+                <p>وصف موجز للمقال الثاني...</p>
+                <a href="#" class="article-link">اقرأ المزيد</a>
+            </div>
+
+            <div class="article-item">
+                <h3 class="article-title">عنوان المقال الثالث</h3>
+                <p>وصف موجز للمقال الثالث...</p>
+                <a href="#" class="article-link">اقرأ المزيد</a>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a href="articles.html" class="text-blue-500 hover:underline">عرض جميع المقالات</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-400 py-8">
+    <footer class="py-8">
         <div class="container mx-auto px-6 text-center flex flex-col items-center">
             <div class="mb-2">
-                <a href="contact.html" class="text-gray-400 hover:text-white">تواصل</a>
+                <a href="contact.html" class="hover:text-white">تواصل</a>
                 <span class="mx-2">|</span>
-                <a href="articles.html" class="text-gray-400 hover:text-white">المقالات</a>
+                <a href="articles.html" class="hover:text-white">المقالات</a>
                 <span class="mx-2">|</span>
-                <a href="about.html" class="text-gray-400 hover:text-white">عني</a>
+                <a href="about.html" class="hover:text-white">عني</a>
                 <span class="mx-2">|</span>
-                <a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a>
+                <a href="index.html" class="hover:text-white">الرئيسية</a>
             </div>
             <p>جميع الحقوق محفوظة &copy; 2025 </p>
         </div>
@@ -327,12 +392,16 @@
             const searchIcon = document.querySelector('.search-icon-svg');
             const mainContent = document.querySelector('main');
             const articles = document.querySelectorAll('main article');
+            const latestArticlesSection = document.getElementById('latest-articles');
 
             body.classList.toggle('light-mode');
             header.classList.toggle('light-mode');
             searchInput.classList.toggle('light-mode');
-            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا
+            if (featuresSection) {
                 featuresSection.classList.toggle('light-mode');
+            }
+            if (latestArticlesSection) {
+                latestArticlesSection.classList.toggle('light-mode');
             }
             footer.classList.toggle('light-mode');
             mainContent.classList.toggle('light-mode');
@@ -366,6 +435,10 @@
                 const featuresSection = document.getElementById('features');
                 if (featuresSection) {
                     featuresSection.classList.add('light-mode');
+                }
+                const latestArticlesSection = document.getElementById('latest-articles');
+                if (latestArticlesSection) {
+                    latestArticlesSection.classList.add('light-mode');
                 }
                 const footer = document.querySelector('footer');
                 if (footer) {
