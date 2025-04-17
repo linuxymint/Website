@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المقالات</title>
+    <link rel="icon" href="https://i.postimg.cc/KzsKpyX7/anime-boy-shock-png-design-5691437.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* أنماط CSS الأساسية (كما كانت من قبل) */
+        /* أنماط CSS الأساسية */
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', sans-serif; /* استخدام خط Cairo */
             transition: background-color 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس لتغيير الألوان */
+            margin: 0; /* تصفير الهوامش الافتراضية للجسم */
+            padding: 0; /* تصفير الحشو الافتراضي للجسم */
+            color: #F7FAFC; /* الوضع المظلم: نص أبيض */
+            background-color: #212121; /* الوضع المظلم: خلفية باللون #212121 */
         }
         /* ... باقي أنماط CSS الأساسية ... */
-
-        /* أنماط CSS للهيدر الجديد */
         .header {
-            background-color: #1A202C; /* bg-gray-900 */
+            background-color: #2D3748; /* bg-gray-800 */
             color: #F7FAFC; /* text-gray-100 */
             padding: 15px 20px;
             display: flex;
@@ -69,7 +72,7 @@
         }
 
         #search-input {
-            background-color: #2D3748; /* bg-gray-800 */
+            background-color: #4A5568; /* bg-gray-700 */
             color: #F7FAFC; /* text-gray-100 */
             border: none;
             padding: 8px 10px;
@@ -125,7 +128,7 @@
             transform: translateY(-50%);
             background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
             ;
-        transition: .4s;
+            transition: .4s;
         }
 
         .switch input:checked + .slider {
@@ -142,7 +145,7 @@
         /* أنماط الوضع الفاتح */
         body.light-mode {
             background-color: #F7FAFC; /* bg-gray-100 */
-            color: #A020F0; /* بنفسجي */
+            color: black; /* الوضع الفاتح: نص أسود */
         }
 
         .header.light-mode {
@@ -151,7 +154,7 @@
         }
 
         .header.light-mode .username {
-            color: #800080; /* بنفسجي غامق لاسم المستخدم */
+            color: blue; /* الوضع الفاتح: اسم المستخدم أزرق (يمكنك تعديله) */
         }
 
         .header.light-mode .search-icon-svg {
@@ -160,36 +163,20 @@
 
         #search-input.light-mode {
             background-color: #EDF2F7; /* bg-gray-200 */
-            color: #A020F0; /* بنفسجي */
+            color: black; /* الوضع الفاتح: نص أسود */
         }
 
-        #features.light-mode {
-            background-color: #E2E8F0; /* bg-gray-200 */
-            color: #A020F0; /* بنفسجي */
+        .light-mode footer {
+            background-color: #212121; /* الوضع الفاتح: تذييل باللون #212121 (قد تحتاج تعديله) */
+            color: black; /* لون نص التذييل في الوضع الفاتح */
         }
 
-        #features.light-mode .bg-gray-800 {
-            background-color: #FFFFFF; /* خلفية مميزات فاتحة */
-            color: #2D3748; /* لون العناوين داخل المميزات */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        }
-
-        #features.light-mode .bg-gray-600 {
-            background-color: #CBD5E0; /* bg-gray-300 */
-            color: #2D3748; /* لون الأيقونات داخل المميزات */
-        }
-
-        footer.light-mode {
-            background-color: #F7FAFC; /* bg-gray-100 */
-            color: #A020F0; /* بنفسجي */
+        .light-mode footer a {
+            color: blue; /* لون روابط التذييل في الوضع الفاتح (يمكنك تعديله) */
         }
 
         /* تعديلات الألوان للوضع المظلم */
-        body {
-            background-color: #1A202C; /* bg-gray-900 */
-            color: #F7FAFC; /* text-gray-100 */
-        }
-
+        /* لون النص والخلفية تم تحديدهما بالفعل في قاعدة body الأساسية */
         .header {
             background-color: #2D3748; /* bg-gray-800 */
             color: #F7FAFC; /* text-gray-100 */
@@ -204,65 +191,7 @@
             color: #F7FAFC; /* text-gray-100 */
         }
 
-        #features {
-            background-color: #4A5568; /* bg-gray-700 */
-            color: #F7FAFC; /* text-gray-100 */
-        }
-
-        #features .bg-gray-800 {
-            background-color: #2D3748; /* خلفية مميزات داكنة */
-            color: #F7FAFC;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        }
-
-        #features .bg-gray-600 {
-            background-color: #718096; /* bg-gray-500 */
-            color: #F7FAFC;
-        }
-
-        footer {
-            background-color: #2D3748; /* bg-gray-800 */
-            color: #A0AEC0; /* text-gray-400 */
-        }
-
-        /* أنماط إضافية لصفحة المقالات */
-        main {
-            padding-top: 80px; /* لإفساح المجال للهيدر الثابت */
-            padding-bottom: 30px;
-        }
-
-        article {
-            margin-bottom: 30px; /* زيادة المسافة بين المقالات */
-            padding: 30px; /* زيادة المساحة الداخلية للمقالات */
-            border-radius: 12px; /* زيادة حجم الزوايا المنحنية */
-        }
-
-        article h2 {
-            font-size: 2.2em; /* زيادة حجم عنوان المقال */
-            font-weight: bold;
-            margin-bottom: 15px; /* زيادة المسافة أسفل العنوان */
-            color: #64FFDA; /* لون مميز لعنوان المقال */
-        }
-
-        article p {
-            line-height: 1.8; /* زيادة تباعد الأسطر لتحسين القراءة */
-            color: #CCD6F6; /* لون نص المقال */
-            font-size: 1.1em; /* زيادة طفيفة في حجم الخط */
-        }
-
-        .light-mode main article {
-            background-color: #FFFFFF;
-            color: #0A192F; /* لون النص في الوضع الفاتح */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل أكثر وضوحًا في الوضع الفاتح */
-        }
-
-        .light-mode main article h2 {
-            color: #007ACC; /* لون مميز لعنوان المقال في الوضع الفاتح */
-        }
-
-        .light-mode main article p {
-            color: #575757; /* لون نص المقال في الوضع الفاتح */
-        }
+        /* ... باقي تعديلات الألوان للوضع المظلم ... */
 
         .header-right a { /* Style for the new link */
             color: #F7FAFC;
@@ -280,9 +209,85 @@
         .header.light-mode .header-right a:hover {
             color: #007ACC;
         }
+
+        /* أنماط إضافية لصفحة المقالات */
+        #latest-articles {
+            padding: 20px;
+        }
+
+        #latest-articles h2 {
+            font-size: 2xl;
+            font-weight: bold;
+            color: white; /* لون العنوان في الوضع المظلم */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .light-mode #latest-articles h2 {
+            color: blue; /* لون العنوان في الوضع الفاتح (يمكنك تعديله) */
+        }
+
+        .article-item {
+            background-color: #2D3748; /* لون خلفية المقالة في الوضع المظلم */
+            color: #F7FAFC; /* لون نص المقالة في الوضع المظلم */
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .light-mode .article-item {
+            background-color: #EDF2F7; /* لون خلفية المقالة في الوضع الفاتح */
+            color: black; /* لون نص المقالة في الوضع الفاتح */
+        }
+
+        .article-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-link {
+            color: #64FFDA; /* لون الرابط في الوضع المظلم */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #4A5568;
+        }
+
+        .light-mode .article-link {
+            color: #007ACC; /* لون الرابط في الوضع الفاتح (يمكنك تعديله) */
+        }
+
+        .light-mode .article-link:hover {
+            color: #0366d6;
+        }
+
+        /* أنماط التذييل */
+        footer {
+            background-color: #212121; /* لون خلفية التذييل في الوضع المظلم */
+            color: #F7FAFC; /* لون نص التذييل في الوضع المظلم */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #F7FAFC; /* لون روابط التذييل في الوضع المظلم */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .light-mode footer {
+            background-color: #212121; /* لون خلفية التذييل في الوضع الفاتح (قد تحتاج تعديله) */
+            color: black; /* لون نص التذييل في الوضع الفاتح */
+        }
+
+        .light-mode footer a {
+            color: blue; /* لون روابط التذييل في الوضع الفاتح (يمكنك تعديله) */
+        }
     </style>
 </head>
-<body class="bg-gray-900">
+<body class="">
 
     <div class="header">
         <div class="header-left">
@@ -305,28 +310,33 @@
     </div>
 
     <main class="container mx-auto px-6 py-8">
-        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 text-teal-400">المقال الأول: كيف تبدأ بتعلم البرمجة</h2>
-            <p class="text-lg leading-relaxed text-gray-300">احبك اخوي محتبى</p>
-        </article>
+        <h1 class="text-3xl font-bold text-white mb-6">تطبيقات مانجا أندرويد</h1>
 
-        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 text-teal-400">المقال الثاني: نصائح لتحسين إنتاجيتك أثناء العمل من المنزل</h2>
-            <p class="text-lg leading-relaxed text-gray-300">احبك اخوي محتبى</p>
-        </article>
-
-        <article class="mb-8 bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 text-teal-400">المقال الثالث: أهمية ممارسة الرياضة بانتظام لصحة أفضل</h2>
-            <p class="text-lg leading-relaxed text-gray-300">احبك اخوي محتبى</p>
-        </article>
+        <section id="latest-articles" class="py-8">
+            <h2 class="text-2xl font-bold text-white mb-4">نظرة سريعة</h2>
+            <p class="text-lg text-gray-300 mb-4">إذا كنت من محبي المانجا على أندرويد، إليك تطبيقات أساسية:</p>
+            <ul class="list-disc pl-5 text-gray-300">
+                <li><strong>Mihon:</strong> واجهة سهلة ودعم مصادر متعددة عبر إضافات.</li>
+                <li><strong>TachiyomiSY:</strong> نسخة معدلة بميزات وتحسينات إضافية.</li>
+                <li><strong>Yōkai (J2K FORK):</strong> نسخة معدلة أخرى بتحديثات وميزات فريدة من J2K.</li>
+                <li><strong>Kotatsu:</strong> واجهة بسيطة وفعالة تدعم مصادر متنوعة.</li>
+                <li><strong>TachiyomiJ2K:</strong> نسخة من Tachiyomi تتضمن أحدث تعديلات J2K.</li>
+                <li><strong>TachiyomiAZ:</strong> مصمم خصيصًا للأجهزة القديمة التي تعمل بنظام أندرويد.</li>
+            </ul>
+            <p class="text-lg text-gray-300 mt-4">هذه التطبيقات تقدم خيارات متنوعة لتلبية احتياجات محبي المانجا على أندرويد.</p>
+        </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-400 py-8">
+    <footer class="py-8">
         <div class="container mx-auto px-6 text-center flex flex-col items-center">
             <div class="mb-2">
-                <a href="about.html" class="text-gray-400 hover:text-white">About Me</a>
+                <a href="contact.html" class="hover:text-white">تواصل</a>
                 <span class="mx-2">|</span>
-                <a href="contact.html" class="text-gray-400 hover:text-white">Contact</a>
+                <a href="articles.html" class="hover:text-white">المقالات</a>
+                <span class="mx-2">|</span>
+                <a href="about.html" class="hover:text-white">عني</a>
+                <span class="mx-2">|</span>
+                <a href="index.html" class="hover:text-white">الرئيسية</a>
             </div>
             <p>جميع الحقوق محفوظة &copy; 2025 </p>
         </div>
@@ -363,24 +373,12 @@
             const body = document.body;
             const header = document.querySelector('.header');
             const searchInput = document.getElementById('search-input');
-            const featuresSection = document.getElementById('features');
             const footer = document.querySelector('footer');
             const themeToggle = document.getElementById('theme-toggle');
-            const searchIcon = document.querySelector('.search-icon-svg');
-            const mainContent = document.querySelector('main');
-            const articles = document.querySelectorAll('main article');
-
             body.classList.toggle('light-mode');
             header.classList.toggle('light-mode');
             searchInput.classList.toggle('light-mode');
-            if (featuresSection) { // تحقق إذا كان قسم المميزات موجودًا (قد لا يكون في صفحة المقالات)
-                featuresSection.classList.toggle('light-mode');
-            }
             footer.classList.toggle('light-mode');
-            mainContent.classList.toggle('light-mode');
-            articles.forEach(article => {
-                article.classList.toggle('light-mode');
-            });
 
             // حفظ حالة الوضع في Local Storage
             localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
@@ -403,23 +401,9 @@
                 if (searchInput) {
                     searchInput.classList.add('light-mode');
                 }
-                const featuresSection = document.getElementById('features');
-                if (featuresSection) {
-                    featuresSection.classList.add('light-mode');
-                }
                 const footer = document.querySelector('footer');
                 if (footer) {
                     footer.classList.add('light-mode');
-                }
-                const mainContent = document.querySelector('main');
-                if (mainContent) {
-                    mainContent.classList.add('light-mode');
-                }
-                const articles = document.querySelectorAll('main article');
-                if (articles) {
-                    articles.forEach(article => {
-                        article.classList.add('light-mode');
-                    });
                 }
                 themeToggle.checked = true;
             }
