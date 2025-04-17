@@ -128,7 +128,7 @@
             transform: translateY(-50%);
             background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
             ;
-        transition: .4s;
+            transition: .4s;
         }
 
         .switch input:checked + .slider {
@@ -334,6 +334,12 @@
                 <a href="#" class="article-link">اقرأ المزيد</a>
             </div>
 
+            <div class="article-item">
+                <h3 class="article-title">تطبيقات مانجا أندرويد</h3>
+                <p class="text-gray-300 mb-4">اكتشف أفضل تطبيقات قراءة المانجا على أندرويد.</p>
+                <a href="manga_apps.html" class="article-link">اقرأ المزيد</a>
+            </div>
+
             <div class="mt-4 text-center">
                 <a href="articles.html" class="text-blue-500 hover:underline">عرض جميع المقالات</a>
             </div>
@@ -386,30 +392,12 @@
             const body = document.body;
             const header = document.querySelector('.header');
             const searchInput = document.getElementById('search-input');
-            const featuresSection = document.getElementById('features');
             const footer = document.querySelector('footer');
             const themeToggle = document.getElementById('theme-toggle');
-            const searchIcon = document.querySelector('.search-icon-svg');
-            const mainContent = document.querySelector('main');
-            const articles = document.querySelectorAll('main article');
-            const latestArticlesSection = document.getElementById('latest-articles');
-
             body.classList.toggle('light-mode');
             header.classList.toggle('light-mode');
             searchInput.classList.toggle('light-mode');
-            if (featuresSection) {
-                featuresSection.classList.toggle('light-mode');
-            }
-            if (latestArticlesSection) {
-                latestArticlesSection.classList.toggle('light-mode');
-            }
             footer.classList.toggle('light-mode');
-            mainContent.classList.toggle('light-mode');
-            if (articles) {
-                articles.forEach(article => {
-                    article.classList.toggle('light-mode');
-                });
-            }
 
             // حفظ حالة الوضع في Local Storage
             localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
@@ -432,27 +420,9 @@
                 if (searchInput) {
                     searchInput.classList.add('light-mode');
                 }
-                const featuresSection = document.getElementById('features');
-                if (featuresSection) {
-                    featuresSection.classList.add('light-mode');
-                }
-                const latestArticlesSection = document.getElementById('latest-articles');
-                if (latestArticlesSection) {
-                    latestArticlesSection.classList.add('light-mode');
-                }
                 const footer = document.querySelector('footer');
                 if (footer) {
                     footer.classList.add('light-mode');
-                }
-                const mainContent = document.querySelector('main');
-                if (mainContent) {
-                    mainContent.classList.add('light-mode');
-                }
-                const articles = document.querySelectorAll('main article');
-                if (articles) {
-                    articles.forEach(article => {
-                        article.classList.add('light-mode');
-                    });
                 }
                 themeToggle.checked = true;
             }
